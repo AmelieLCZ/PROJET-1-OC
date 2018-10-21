@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accueil</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" media="screen" href="style.css"/>
+	<link rel="stylesheet" media="screen and (min-width: 1024px) and (max-width: 1599px)" href="style-1024-1599.css" />
+	<link rel="stylesheet" media="screen and (min-width: 720px) and (max-width: 1023px)" href="style-720-1023.css" />
+	<link rel="stylesheet" media="screen and (min-width: 480px) and (max-width: 719px)" href="style-480-719.css" />
+	<link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 479px)" href="style-320-479.css" />
+	<link rel="stylesheet" media="screen and (min-width: 1601px) and (max-width: 1919px)" href="style-1601-1919.css" />
+	<link rel="stylesheet" media="screen and (min-width: 1920px)" href="style-1920+.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<!--Code JS pour import API Google Maps -->
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE5qSYdXTFHdNE7SCEP_yo1HNSi58L4Uk&callback=initMap">
+    </script>
+		<script type="text/javascript">
+			function initialiser() {
+				var latlng = new google.maps.LatLng(48.873228, 2.349793);
+				//objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
+				//de définir des options d'affichage de notre carte
+				var options = {
+					center: latlng,
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				// Localisation de WebAgency
+  				var WebAgency = {lat: 48.873228, lng: 2.349793};
+				var carte = new google.maps.Map(document.getElementById("map"), options);
+				var marker = new google.maps.Marker({position: WebAgency, map: carte});
+			}
+		</script>
+</head>
+
+<body onload="initialiser()">
+	<header>
+		<img id="nav-logo" src="webagency_images\images\logo.png" alt="Logo Webagency">
+		<nav>
+			<i id="menu" class="fas fa-bars"></i>
+			<div class="nav-onglet">Accueil</div>
+			<div class="nav-onglet">Services</div>
+			<div class="nav-onglet">Portfolio</div>
+			<div class="nav-onglet">Contact</div>
+		</nav>
+	</header>
+
+	<div class="section" id="sec-acc">
+		<!-- SLIDER -->
+		<div class="slider">
+			<div id="acc-text">
+				<h1><span id="blue-text">Webagency</span>: l'agence de tous vos projets !</h1>
+				<p>Vous avez un projet web? La WebAgency vous aide à le réaliser !</p>
+				<a href="#sec-ser"><button id="butt-info">Plus d'infos</button></a>
+			</div>
+			<div id="gauche">
+				<i class="fas fa-chevron-left"></i>
+			</div>
+			<div id="droite">
+				<i class="fas fa-chevron-right"></i>
+			</div>
+
+			<div class="slides">
+				<div class="slide">
+					<img src="webagency_images\images\slider\bg1.jpg" alt="slide 1">
+				</div>
+				<div class="slide">
+					<img src="webagency_images\images\slider\bg2.jpg"  alt="slide 2">
+				</div>
+			</div>
+		</div>
+		<!-- FIN SLIDER -->
+	</div>
+
+	<div class="section" id="sec-ser"><!-- SECTION SERVICES-->
+		<div class="head-sec"> <!-- début d'en tête d'une section-->
+			<h2>NOS SERVICES</h2>
+			<div class="separation">
+				<div class="sep-point"></div>
+				<div class="sep-ligne"></div>
+			</div>
+			<p>Notre agence WEBAGENCY vous propose un service professionnel et personnalisé en fonction de vos attentes.</p>
+		</div> 		<!-- fin d'en tête d'une section-->
+		<div id="contenu-ser">
+			<div id="img-ser">		
+				<img src="webagency_images\images\main-feature.png" alt="Ordinateur">
+			</div>
+			<div id="desc-ser"> 
+				<div id="ux">
+					<h3>UX Design</h3>
+					<div class="categorie-ser">
+						<i id="fa1" class="fas fa-chart-line fa-2x"></i>
+						<div class="serv-point"></div>
+						<p>L'UX est un process complet qui prend en compte l’UI mais aussi le contenu, le design, l’architecture du site… Il s’agit de faciliter la vie de l’internaute pour qu’il atteigne facilement son but (achat, recherche d’informations…).</p>
+					</div>
+				</div>
+				<div id="ui">
+					<h3>UI Design</h3>
+					<div class="categorie-ser">
+						<i id="fa2" class="fas fa-cubes fa-2x"></i>
+						<div class="serv-point"></div>
+						<p>L’UI c’est ce qui fait le lien entre l’humain et la machine, c’est en quelque sorte le produit fini présenté à l’internaute qui va lui permettre de naviguer aisément sur votre site web, sans lui demander trop d’effort.</p>
+					</div>
+				</div>
+				<div id="seo">
+					<h3>SEO</h3>
+					<div class="categorie-ser">
+						<i id="fa3" class="fas fa-chart-pie fa-2x"></i>
+						<div class="serv-point"></div>
+						<p>Ces techniques cherchent à améliorer la compréhension de la thématique et du contenu d'une ou de l'ensemble des pages d'un site web par les robots d'indexation, et à augmenter le trafic naturel (organique) du site.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="sec-proj"> <!-- SECTION PROJETS-->
+		<div class="head-sec"> <!-- début d'en tête d'une section-->
+			<h2>NOS PROJETS</h2>
+			<div class="separation">
+				<div class="sep-point"></div>
+				<div class="sep-ligne"></div>
+			</div>
+			<p>Notre agence WEBAGENCY vous propose un service professionnel et personnalisé en fonction de vos attentes. Retrouvez une sélection de nos projets ci-dessous.</p>
+		</div> 		<!-- fin d'en tête d'une section-->
+
+		<div id="select-proj"> <!-- Sélecteur de projet-->
+			<button id="proj-butt-1" class="proj-butt">All works</button>
+			<button id="proj-butt-2" class="proj-butt">Corporate</button> 
+			<button id="proj-butt-3" class="proj-butt">Creative</button> 
+			<button id="proj-butt-4" class="proj-butt">Portfolio</button> 
+			<i id="fleche-bas-1" class="fas fa-caret-down"></i>
+			<i id="fleche-bas-2" class="fas fa-caret-down"></i>
+			<i id="fleche-bas-3" class="fas fa-caret-down"></i>
+			<i id="fleche-bas-4" class="fas fa-caret-down"></i>
+		</div>
+
+		<div class="grid-project">
+			<img class="grid-item" src="webagency_images\images\portfolio\01.jpg" alt="projet 1">
+			<img class="grid-item" src="webagency_images\images\portfolio\02.jpg" alt="projet 2">
+			<img class="grid-item" src="webagency_images\images\portfolio\03.jpg" alt="projet 3">
+			<img class="grid-item" src="webagency_images\images\portfolio\04.jpg" alt="projet 4">
+			<img class="grid-item" src="webagency_images\images\portfolio\05.jpg" alt="projet 5">
+			<img class="grid-item" src="webagency_images\images\portfolio\06.jpg" alt="projet 6">
+			<img class="grid-item" src="webagency_images\images\portfolio\07.jpg" alt="projet 7">
+			<img class="grid-item" src="webagency_images\images\portfolio\08.jpg" alt="projet 8">
+		</div>
+	</div>
+	<div class="section" id="sec-contact">
+		<div id="map">
+		</div>
+		<div id="sur-map">
+		</div>
+		<form id="contact-form">
+			<h4>Contact Info</h4>
+			<h5>Web Agency SAS</h5><br>
+			<p>25 Rue d'Hauteville 75010 PARIS<br>
+		 	Tél : 01 02 03 04 05<br>
+		 	</p>
+        	<input type="text" name="name" id="name" placeholder="Name" size="30" maxlength="15"> <br>
+        	<input type="email" name="email" id="email" placeholder="Email" size="30" maxlength="40"> <br>
+        	<input type="text" name="subject" id="subject" placeholder="Subject" size="30" maxlength="40"/> <br>
+        	<input type="text" name="message" id="message" placeholder="Message" size="30" maxlength="500"/> <br>
+        	<input type="submit" id="submit" value="Send Message">
+		</form>
+	</div>
+	<footer>
+		<p>WebAgency - Copyright 2018</p>
+	</footer>
+</body>
+
+
+</html>
